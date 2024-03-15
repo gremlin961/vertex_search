@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cymbal Corp HR Portal</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <!-- This section contains the contents for the search widget -->
+    <!-- ----------START---------- -->
+
+    <!-- Widget JavaScript bundle -->
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
+
+    <!-- Search widget element is not visible by default -->
+    <gen-search-widget
+    configId="92136207-67f4-4db7-939e-3837639898fa"
+    location="us"
+    triggerId="searchWidgetTrigger">
+    </gen-search-widget>
+
+    <div class="searchbox">
+        <!-- Element that opens the widget on click. It does not have to be an input -->
+        <input placeholder="Search here for AskHR" style="height:40px; border: 2px solid black; border-style:solid; border-width:small;" size="70" id="searchWidgetTrigger" />
+    </div>
+
+    <!-- -----------END----------- -->
+
+    <div class="container">
+        <h1>Cymbal Corp HR Portal</h1>
+        <p>Upload Documents or Images Here</p>
+        <form method="post" action="/upload" enctype="multipart/form-data">
+            <label for="project_id">Document Name:</label>
+            <input type="text" id="project_id" name="project_id" required> 
+            <br>
+            <label for="secret_name">Location Name:</label>
+            <input type="text" id="secret_name" name="secret_name" required> 
+            <br>
+            <label for="image">Image file:</label>
+            <input type="file" id="image" name="image" required>
+            <br>
+            <button type="submit">Upload Data</button>
+        </form>
+    </div>
+</body>
+</html>
